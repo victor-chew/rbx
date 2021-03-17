@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+      "functional": "cpp",
+      "cstdlib": "cpp",
+      "random": "cpp"
+    },
+    "python.pythonPath": "C:\\Users\\Victor\\AppData\\Local\\Programs\\Python\\Python38\\python.exe",
+    "editor.autoClosingQuotes": "never",
+    "editor.autoClosingBrackets": "never",
+    "editor.autoClosingOvertype": "never"
+}

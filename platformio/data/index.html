@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>RBX</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/ico" href="favicon.ico" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<section id="screen">
+		<div id="toolbar_wrapper">
+			<div id="toolbar">
+				<div id="button_panel">
+					<button id="new_prog" title="New program" onclick="new_dialog.showModal()"><i class="fa fa-file"></i></button> 
+					<button id="open_prog" title="Open program" onclick="show_open_dialog()"><i class="fa fa-folder-open"></i></button>
+					<button id="save_prog" title="Save program" onclick="show_save_dialog()"<i class="fa fa-save"></i></button> 
+					<button id="run_prog" title="Run program" onclick="run_prog()"><i class="fa fa-play"></i></button> 
+					<button id="stop_prog" title="Stop program" onclick="stop_prog()" style="display:none"><i class="fa fa-stop"></i></button> 
+					<button id="clear_log" title="Clear log" onclick="clear_log()"><i class="fa fa-ban"></i></button> 
+          <a href="/backup"><button id="download_backup" title="Download backup"><i class="fa fa-cloud-download"></i></button></a>
+          <button id="restore_backup" title="Restore backup" onclick="restore_backup()"><i class="fa fa-cloud-upload"></i></button> 
+					<a href="https://rbx.randseq.org/index.php/programming-guide" target="_help"><button title="Help"><i class="fa fa-question"></i></button></a>
+          <input type="file" id="fileupload" name="fileupload" style="display:none" />
+        </div>
+        <div id="prog_name">RBX Script</div>
+				<img id="app_icon" src="rbx.png" title="RBX (Web IDE v0.1.1)" />
+			</div>
+		</div>
+		<div id="editor"></div>
+		<div id="logger_wrapper"><div id="logger"></div></div>
+	</section>
+	<dialog id="new_dialog">
+		<form method="dialog">
+			<div class="dialog_title"><b>Start new program?</b></div>
+			<div class="dialog_button_panel">
+				<button id="confirm_new">Proceed</button>
+				<button value="cancel" autofocus>Cancel</button>
+			</div>
+		</form>
+	</dialog>
+	<dialog id="open_dialog">
+		<form method="dialog">
+			<div class="dialog_title"><b>Program name:</b></div>
+			<div>
+				<select id="open_prog_list" size="8" autofocus></select>
+			</div>
+			<div class="dialog_button_panel">
+				<button id="confirm_open">Open</button>
+				<button value="cancel">Cancel</button>
+				<button id="delete_prog" value="delete">Delete</button>
+			</div>
+		</form>
+	</dialog>
+	<dialog id="save_dialog">
+		<form method="dialog">
+			<div class="dialog_title"><b>Program name:</b></div>
+      <div><input id="save_name" size="26" onkeydown="name_check(this)" onkeyup="name_check(this)" autofocus /></div>
+			<div class="dialog_button_panel">
+				<button id="confirm_save">Save</button>
+				<button value="cancel">Cancel</button>
+			</div>
+      <br />
+      <div class="autorun">
+        <input id="save_autorun" type="checkbox" class="autorun"></input>
+        <label for="save_autorun">Run on start</label>
+      </div>
+		</form>
+	</dialog>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.min.js" type="text/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/gh/cferdinandi/atomic@4/dist/atomic.polyfills.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/idb-keyval@3/dist/idb-keyval-iife.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js"></script>
+	<script src="rbx.js"></script>
+</body>
+</html>

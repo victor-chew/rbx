@@ -1,0 +1,168 @@
+html, body, section {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	font-family: sans-serif;
+}
+
+#screen {
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+#toolbar_wrapper
+{
+	border: none;
+	margin: 3px;
+}
+
+#toolbar {
+	display: flex;
+	width: 100%;
+	background-color: #888;
+	overflow: auto;
+}
+
+#button_panel {
+	flex: 0 1 auto;
+	float: left;
+	display: inline-block;
+}
+
+#button_panel button {
+	width: 1.5em;
+	text-align: center;
+	padding: 5px 0;
+	transition: all 0.3s ease;
+	color: white;
+	background-color: #888;
+	border: none;
+	display: inline-block;
+	font-size: 24px;
+	outline: 0;
+}
+
+#button_panel button:hover, #button_panel button:active {
+	background-color: #000;
+}
+
+#prog_name {
+	flex: 1 1 auto;
+	display: inline-block;
+	vertical-align: middle;
+	color: yellow;
+	overflow: auto;
+  text-align: left;
+  padding-left: 2em;
+	font-weight: bold;
+	margin: auto;
+}
+
+#app_icon {
+	flex: 0 1 auto;
+	width: 1.5em;
+	height: 1.5em;
+	padding-top: 0.25em;
+	padding-right: 0.3em;
+	padding-left: 0.3em;
+	padding-bottom: 0.4em;
+	border: 0.1em solid black;
+	float: right;
+	background-color: white;
+}
+
+#editor {
+	border: 1px solid gray;
+	margin: 3px;
+	overflow: auto;
+}
+
+#logger {
+	width: 100%;
+	font-family: monospace;
+}
+
+#logger_wrapper {
+	margin: 3px;
+	border: 1px solid gray;
+	overflow: auto;
+}
+
+dialog {
+	border: 1px solid gray;
+	border-radius: 0.6rem;
+	box-shadow: 0 0 1em black;
+}
+
+dialog::backdrop {
+	background: rgba(8, 8, 8, 0.3);;
+}
+
+dialog button {
+	border: 1px solid gray;
+	border-radius: 0.1rem;
+	box-shadow: 0 0 3px black;
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+}
+
+dialog select, dialog select:focus, dialog select:active, dialog input, dialog input:focus, dialog input:active {
+	outline: 0;
+}
+
+.dialog_title {
+	font-weight: bold;
+	margin-bottom: 1em;
+}
+
+.dialog_button_panel {
+	text-align: center;
+	margin-top: 1em;
+}
+
+#open_prog_list {
+	width: 20em;
+	border: 1px solid gray;
+}
+
+.gutter {
+	background-color: white;
+	background-repeat: no-repeat;
+	background-position: 50%;
+}
+
+.gutter.gutter-vertical {
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=');
+	cursor: row-resize;
+}
+
+.line_num {
+	outline: 0;
+	border: 1px solid gray;
+	border-radius: 0.3rem;
+	padding: 0 1em 0 1em;
+	background-color: #bbbbbb;
+	font-size: xx-small;
+}
+
+.line_num:hover {
+	background-color: #aaaaaa;
+}
+
+.autorun {
+	font-size: small;
+}
+
+input[type="checkbox"], label {
+  float: left;
+  line-height: 1.6em;
+  height: 1.6em;
+  margin: 0px 2px;
+  padding: 0px;
+  font-size: inherit;
+}
+
+input[type="checkbox"] {
+  clear: left;
+}
